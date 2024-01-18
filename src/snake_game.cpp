@@ -12,7 +12,7 @@ void Game::run() noexcept {
         if (m_focus && m_time.isFrame(m_fps)) {
             m_snake.advance();
             if (m_snake.isEating(m_treat.where())) {
-                ++m_fps;
+                m_fps += c_advanceFPSby;
                 if (m_snake.hasWon()) {
                     // m_window.playAgain("You Won!");
                     resetGame();

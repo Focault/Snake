@@ -10,7 +10,8 @@
 
 namespace snake {
 
-constexpr int c_startFPS = 5;
+constexpr float c_startFPS = 5;
+constexpr float c_advanceFPSby = 0.2;
 
 class Game {
 public:
@@ -34,7 +35,7 @@ private:
     sfml::Time m_time;
     Snake m_snake;
     Treat m_treat;
-    int m_fps;
+    float m_fps;
     bool m_focus;
 };
 

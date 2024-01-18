@@ -10,7 +10,7 @@ public:
     Time& operator=(const Time& a_other) = delete;
     ~Time() = default;
 
-    bool isFrame(int a_fps) noexcept;
+    bool isFrame(float a_fps) noexcept;
 
 private:
     sf::Clock m_clock;

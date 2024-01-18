@@ -7,7 +7,7 @@ inline Time::Time()
 : m_clock()
 {}
 
-inline bool Time::isFrame(int a_fps) noexcept {
+inline bool Time::isFrame(float a_fps) noexcept {
     constexpr int32_t milisecondsInSeconds = 1000;
     sf::Time elapsed = m_clock.getElapsedTime();
     if (elapsed.asMilliseconds() >= (milisecondsInSeconds / a_fps)) {
