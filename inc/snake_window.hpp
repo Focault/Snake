@@ -28,8 +28,15 @@ public:
     // void playAgain(std::string a_msg);    
 
 private:
+    void drawFrame();
+    void drawSnake(const Snake& a_snake);
+    void drawTreat(const Treat& a_treat);
+
+private:
     sf::RenderWindow m_window;
     sf::Vector2f m_cubeSize;
+    sf::RectangleShape m_snakeBone;
+    sf::RectangleShape m_treat;
 };
 
 } // snake
