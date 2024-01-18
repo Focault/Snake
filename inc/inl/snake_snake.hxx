@@ -31,7 +31,7 @@ inline bool Snake::isDead() const noexcept {
         head.second < 0 || head.second >= c_yNumOfCubes) {
             return true;
     }
-    for (auto& iter = ++m_snake.begin(); iter != m_snake.end(); ++iter) {
+    for (auto iter = ++m_snake.begin(); iter != m_snake.end(); ++iter) {
         if (*iter == head) {
             return true;
         }
