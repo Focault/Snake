@@ -19,8 +19,8 @@ void Window::draw(const Snake& a_snake, const Treat& a_treat) {
 void Window::drawSnake(const Snake& a_snake) {
     sf::Vector2f position;
     for (const auto& coordinates : a_snake.location()) {
-        position.x = m_cubeSize.x * static_cast<float>(coordinates.first);
-        position.y = m_cubeSize.y * static_cast<float>(coordinates.second);
+        position.x = m_cubeSize.x * static_cast<float>(coordinates.first) + m_Xbuffer;
+        position.y = m_cubeSize.y * static_cast<float>(coordinates.second) + m_Ybuffer;
         m_snakeBone.setPosition(position);
         m_window.draw(m_snakeBone);
     }
@@ -29,8 +29,8 @@ void Window::drawSnake(const Snake& a_snake) {
 void Window::drawTreat(const Treat& a_treat) {
     std::pair<int, int> coordinates = a_treat.where();
     sf::Vector2f position;
-    position.x = m_cubeSize.x * static_cast<float>(coordinates.first);
-    position.y = m_cubeSize.y * static_cast<float>(coordinates.second);
+    position.x = m_cubeSize.x * static_cast<float>(coordinates.first) + m_Xbuffer;
+    position.y = m_cubeSize.y * static_cast<float>(coordinates.second) + m_Ybuffer;
     m_treat.setPosition(position);
     m_window.draw(m_treat);
 }

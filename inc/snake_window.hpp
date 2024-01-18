@@ -28,6 +28,9 @@ public:
     // void playAgain(std::string a_msg);    
 
 private:
+    void setFrame();
+    void setElements();
+
     void drawFrame();
     void drawSnake(const Snake& a_snake);
     void drawTreat(const Treat& a_treat);
@@ -35,8 +38,11 @@ private:
 private:
     sf::RenderWindow m_window;
     sf::Vector2f m_cubeSize;
+    sf::RectangleShape m_frame;
     sf::RectangleShape m_snakeBone;
     sf::RectangleShape m_treat;
+    float m_Xbuffer;
+    float m_Ybuffer;
 };
 
 } // snake
