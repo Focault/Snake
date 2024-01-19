@@ -62,7 +62,7 @@ inline void Window::setElements() {
 }
 
 inline void Window::drawFrame() {
-    m_window.clear(sf::Color(176, 238, 23, 1));
+    m_window.clear(sf::Color(c_boardColour));
     m_window.draw(m_frame);
 }
 
