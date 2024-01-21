@@ -9,14 +9,11 @@
 int main()
 {
     using namespace snake;
-    std::unordered_map<LogicMode, Logic*> functunality;
-    functunality[GAME] = new GameLogic();
-    functunality[PLAY_AGAIN] = new PlayAgainLogic();
-    functunality[MENU] = new MenuLogic();
-    Game game(functunality);
+    Game::functunality functions;
+    functions[GAME] = std::make_unique<GameLogic>();
+    functions[PLAY_AGAIN] = std::make_unique<PlayAgainLogic>();
+    functions[MENU] = std::make_unique<MenuLogic>();
+    Game game(functions);
     game.run();
-    for (auto& function : functunality) {
-        delete function.second;
-    }
     return 0;
 }

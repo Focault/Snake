@@ -3,6 +3,7 @@
 
 #include <SFML/Window.hpp>
 #include <unordered_map>
+#include <memory>
 
 #include "snake_window.hpp"
 #include "sf_time.hpp"
@@ -13,7 +14,9 @@ namespace snake {
 
 class Game {
 public:
-    explicit Game(std::unordered_map<LogicMode, Logic*>& a_functunality);
+    using functunality = std::unordered_map<LogicMode, std::unique_ptr<Logic> >;
+public:
+    explicit Game(functunality& a_functunality);
     Game(const Game& a_other) = delete;
     Game& operator=(const Game& a_other) = delete;
     ~Game() = default;
@@ -28,7 +31,7 @@ private:
     sf::Event m_event;
     sfml::Time m_time;
     LogicMode m_mode;
-    std::unordered_map<LogicMode, Logic*>& m_functunality;
+    functunality& m_functunality;
     Score m_score;
     float m_fps;
     bool m_focus;
