@@ -26,7 +26,7 @@ void GameLogic::makeMove(Window& a_window, float& a_fps, LogicMode& a_mode, Scor
         resetGame(a_fps, a_mode);
         return;
     }
-    a_window.draw(m_snake, m_treat);
+    a_window.draw(m_snake, m_treat, a_score);
 }
 
 void GameLogic::keyPressed(sf::Keyboard::Key a_keyPressed, Window& a_window) {

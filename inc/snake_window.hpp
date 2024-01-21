@@ -5,6 +5,7 @@
 
 #include "snake_snake.hpp"
 #include "snake_treat.hpp"
+#include "snake_score.hpp"
 
 namespace snake {
 
@@ -21,7 +22,7 @@ public:
 
     bool pollEvent(sf::Event& a_event);
 
-    void draw(const Snake& a_snake, const Treat& a_treat);
+    void draw(const Snake& a_snake, const Treat& a_treat, const Score& a_score);
 
     // void menu();
 
@@ -30,8 +31,10 @@ public:
 private:
     void setFrame();
     void setElements();
+    void setScore();
 
     void drawFrame();
+    void drawScore(const Score& a_score);
     void drawSnake(const Snake& a_snake);
     void drawTreat(const Treat& a_treat);
 
@@ -41,6 +44,8 @@ private:
     sf::RectangleShape m_frame;
     sf::RectangleShape m_snakeBone;
     sf::RectangleShape m_treat;
+    sf::Font m_font;
+    sf::Text m_text;
     float m_Xbuffer;
     float m_Ybuffer;
 };

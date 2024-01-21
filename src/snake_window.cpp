@@ -5,14 +5,16 @@
 #include "snake_window.hpp"
 #include "snake_snake.hpp"
 #include "snake_treat.hpp"
+#include "snake_score.hpp"
 #include "snake_board.hpp"
 
 namespace snake {
 
-void Window::draw(const Snake& a_snake, const Treat& a_treat) {
+void Window::draw(const Snake& a_snake, const Treat& a_treat, const Score& a_score) {
     drawFrame();
     drawSnake(a_snake);
     drawTreat(a_treat);
+    drawScore(a_score);
     m_window.display();
 }
 
