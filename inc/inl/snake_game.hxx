@@ -6,7 +6,7 @@
 
 namespace snake {
 
-inline Game::Game(functunality& a_functunality)
+inline Game::Game(functionality& a_functunality)
 : m_window()
 , m_event()
 , m_time()

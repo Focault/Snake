@@ -14,9 +14,9 @@ namespace snake {
 
 class Game {
 public:
-    using functunality = std::unordered_map<LogicMode, std::unique_ptr<Logic> >;
+    using functionality = std::unordered_map<LogicMode, std::unique_ptr<Logic> >;
 public:
-    explicit Game(functunality& a_functunality);
+    explicit Game(functionality& a_functunality);
     Game(const Game& a_other) = delete;
     Game& operator=(const Game& a_other) = delete;
     ~Game() = default;
@@ -31,7 +31,7 @@ private:
     sf::Event m_event;
     sfml::Time m_time;
     LogicMode m_mode;
-    functunality& m_functunality;
+    functionality& m_functunality;
     Score m_score;
     float m_fps;
     bool m_focus;
