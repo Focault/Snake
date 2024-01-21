@@ -23,7 +23,7 @@ INL_DIR= ../inc/inl/
 
 TARGET = Snake
 # ! Fill only this:
-OBJS = $(SRC_DIR)Snake.o $(SRC_DIR)snake_game.o $(SRC_DIR)snake_window.o
+OBJS = $(SRC_DIR)Snake.o $(SRC_DIR)snake_game.o $(SRC_DIR)snake_window.o $(SRC_DIR)snake_game_logic.o
 
 all: $(TARGET)
 

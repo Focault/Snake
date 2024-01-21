@@ -2,20 +2,18 @@
 #define SNAKE_GAME_HPP
 
 #include <SFML/Window.hpp>
+#include <unordered_map>
 
 #include "snake_window.hpp"
 #include "sf_time.hpp"
-#include "snake_snake.hpp"
-#include "snake_treat.hpp"
+#include "snake_logic.hpp"
+#include "snake_score.hpp"
 
 namespace snake {
 
-constexpr float c_startFPS = 5;
-constexpr float c_advanceFPSby = 0.2;
-
 class Game {
 public:
-    Game();
+    explicit Game(std::unordered_map<LogicMode, Logic*>& a_functunality);
     Game(const Game& a_other) = delete;
     Game& operator=(const Game& a_other) = delete;
     ~Game() = default;
@@ -25,16 +23,13 @@ public:
 private:
     void handleEvents();
 
-    void resetGame() noexcept;
-
-    void keyPressed() noexcept;
-
 private:
     Window m_window;
     sf::Event m_event;
     sfml::Time m_time;
-    Snake m_snake;
-    Treat m_treat;
+    LogicMode m_mode;
+    std::unordered_map<LogicMode, Logic*>& m_functunality;
+    Score m_score;
     float m_fps;
     bool m_focus;
 };

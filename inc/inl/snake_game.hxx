@@ -1,23 +1,21 @@
 #ifndef SNAKE_GAME_HXX
 #define SNAKE_GAME_HXX
 
+#include "snake_logic.hpp"
+#include "snake_board.hpp"
+
 namespace snake {
 
-inline Game::Game()
+inline Game::Game(std::unordered_map<LogicMode, Logic*>& a_functunality)
 : m_window()
 , m_event()
 , m_time()
-, m_snake()
-, m_treat()
+, m_mode(MENU)
+, m_functunality(a_functunality)
+, m_score()
 , m_fps(c_startFPS)
 , m_focus(true)
 {}
-
-inline void Game::resetGame() noexcept {
-    m_snake.reset();
-    m_treat.replace(m_snake);
-    m_fps = c_startFPS;
-}
 
 } // snake
 
