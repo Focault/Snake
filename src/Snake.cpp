@@ -7,7 +7,8 @@ int main()
 {
     using namespace snake;
     FunctionalityFactory factory;
-    Game::functionality functions = factory.makeFunctionality();
+    Game::functionality functions;
+    factory.loadFunctionality(functions);
     Game game(functions);
     game.run();
     return 0;

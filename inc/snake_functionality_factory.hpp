@@ -12,7 +12,7 @@ public:
     FunctionalityFactory& operator=(const FunctionalityFactory& a_other) = default;
     ~FunctionalityFactory() = default;
 
-    Game::functionality makeFunctionality() const;
+    void loadFunctionality(Game::functionality& a_functionality) const;
 };
 
 } // snake

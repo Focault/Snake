@@ -9,12 +9,10 @@
 
 namespace snake {
 
-inline Game::functionality FunctionalityFactory::makeFunctionality() const {
-    Game::functionality functions;
-    functions[GAME] = std::make_unique<GameLogic>();
-    functions[PLAY_AGAIN] = std::make_unique<PlayAgainLogic>();
-    functions[MENU] = std::make_unique<MenuLogic>();
-    return functions;
+inline void FunctionalityFactory::loadFunctionality(Game::functionality& a_functionality) const {
+    a_functionality[GAME] = std::make_unique<GameLogic>();
+    a_functionality[PLAY_AGAIN] = std::make_unique<PlayAgainLogic>();
+    a_functionality[MENU] = std::make_unique<MenuLogic>();
 }
 
 } // snake
