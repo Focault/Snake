@@ -3,19 +3,22 @@
 
 #include "snake_logic.hpp"
 #include "snake_board.hpp"
+#include "snake_functionality_factory.hpp"
 
 namespace snake {
 
-inline Game::Game(functionality& a_functunality)
+inline Game::Game()
 : m_window()
 , m_event()
 , m_time()
 , m_mode(MENU)
-, m_functunality(a_functunality)
 , m_score()
 , m_fps(c_startFPS)
 , m_focus(true)
-{}
+, m_functunality()
+{
+    FunctionalityFactory().loadFunctionality(m_functunality, m_window, m_fps, m_mode, m_score);
+}
 
 } // snake
 

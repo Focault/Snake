@@ -3,9 +3,6 @@
 
 #include <SFML/Window/Event.hpp>
 
-#include "snake_window.hpp"
-#include "snake_score.hpp"
-
 namespace snake {
 
 enum LogicMode {
@@ -18,9 +15,9 @@ class Logic {
 public:
     virtual ~Logic() = default;
 
-    virtual void makeMove(Window& a_window, float& a_fps, LogicMode& a_mode, Score& a_score) = 0;
+    virtual void makeMove() = 0;
 
-    virtual void keyPressed(sf::Keyboard::Key a_keyPressed, Window& a_window) = 0;
+    virtual void keyPressed(sf::Keyboard::Key a_keyPressed) = 0;
 
 protected:
     Logic() = default;

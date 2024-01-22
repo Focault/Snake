@@ -8,7 +8,7 @@ void Game::run() noexcept {
     while (m_window.isOpen()) {
         handleEvents();
         if (m_focus && m_time.isFrame(m_fps)) {
-            m_functunality[m_mode]->makeMove(m_window, m_fps, m_mode, m_score);
+            m_functunality[m_mode]->makeMove();
         }
     }
 }
@@ -22,7 +22,7 @@ void Game::handleEvents() {
                 break;
 
             case sf::Event::KeyPressed:
-                m_functunality[m_mode]->keyPressed(m_event.key.code, m_window);
+                m_functunality[m_mode]->keyPressed(m_event.key.code);
                 break;
 
             case sf::Event::LostFocus:

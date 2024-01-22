@@ -16,7 +16,7 @@ inline Window::Window()
 , m_snakeBone()
 , m_treat()
 , m_font()
-, m_text()
+, m_scoreText()
 , m_Xbuffer()
 , m_Ybuffer()
 {
@@ -70,15 +70,15 @@ inline void Window::setScore() {
     if (!m_font.loadFromFile("../resources/Minecrafter.Reg.ttf")) {
         throw std::runtime_error("Loading Font Failed.");
     }
-    m_text.setFont(m_font);
-    m_text.setCharacterSize(m_cubeSize.x / 2);
-    m_text.setFillColor(sf::Color::Black);
+    m_scoreText.setFont(m_font);
+    m_scoreText.setCharacterSize(m_cubeSize.x / 2);
+    m_scoreText.setFillColor(sf::Color::Black);
 }
 
 inline void Window::drawScore(const Score& a_score) {
-    m_text.setString(std::to_string(a_score.score()));
-    m_text.setPosition(m_cubeSize.x, m_cubeSize.y / 2);
-    m_window.draw(m_text);
+    m_scoreText.setString(std::to_string(a_score.score()));
+    m_scoreText.setPosition(m_cubeSize.x, m_cubeSize.y / 2);
+    m_window.draw(m_scoreText);
 }
 
 inline void Window::drawFrame() {

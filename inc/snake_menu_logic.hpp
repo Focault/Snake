@@ -11,14 +11,19 @@ namespace snake {
 
 class MenuLogic : public Logic {
 public:
-    MenuLogic() = default;
+    MenuLogic(Window& a_window, LogicMode& a_mode, Score& a_score);
     MenuLogic(const MenuLogic& a_other) = delete;
     MenuLogic& operator=(const MenuLogic& a_other) = delete;
     ~MenuLogic() = default;
 
-    virtual void makeMove(Window& a_window, float& a_fps, LogicMode& a_mode, Score& a_score) override;
+    virtual void makeMove() override;
 
-    virtual void keyPressed(sf::Keyboard::Key a_keyPressed, Window& a_window) override;
+    virtual void keyPressed(sf::Keyboard::Key a_keyPressed) override;
+
+protected:
+    Window& m_window;
+    LogicMode& m_mode;
+    Score& m_score;
 };
 
 } // snake

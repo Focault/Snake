@@ -2,6 +2,9 @@
 #define SNAKE_FUNCTIONALITY_FACTORY_HPP
 
 #include "snake_game.hpp"
+#include "snake_window.hpp"
+#include "snake_logic.hpp"
+#include "snake_score.hpp"
 
 namespace snake {
 
@@ -12,7 +15,7 @@ public:
     FunctionalityFactory& operator=(const FunctionalityFactory& a_other) = default;
     ~FunctionalityFactory() = default;
 
-    void loadFunctionality(Game::functionality& a_functionality) const;
+    void loadFunctionality(Game::functionality& a_functionality, Window& a_window, float& a_fps, LogicMode& a_mode, Score& a_score) const;
 };
 
 } // snake

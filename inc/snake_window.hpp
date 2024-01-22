@@ -45,7 +45,7 @@ private:
     sf::RectangleShape m_snakeBone;
     sf::RectangleShape m_treat;
     sf::Font m_font;
-    sf::Text m_text;
+    sf::Text m_scoreText;
     float m_Xbuffer;
     float m_Ybuffer;
 };
