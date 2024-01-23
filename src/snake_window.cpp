@@ -67,23 +67,26 @@ void Window::setElements() {
 
 void Window::setScore() {
     constexpr float scoreScale = 1.7;
-    if (!m_font.loadFromFile("../resources/Minecrafter.Reg.ttf")) {
+    if (!m_scoreFont.loadFromFile("../resources/Minecrafter.Reg.ttf")) {
         throw std::runtime_error("Loading Font Failed.");
     }
-    m_scoreText.setFont(m_font);
+    m_scoreText.setFont(m_scoreFont);
     m_scoreText.setCharacterSize(m_cubeSize.x / scoreScale);
     m_scoreText.setFillColor(sf::Color::Black);
 }
 
 void Window::setTitle() {
-    m_title.setFont(m_font);
+    m_title.setFont(m_scoreFont);
     m_title.setCharacterSize(m_cubeSize.x * 2);
     m_title.setFillColor(sf::Color::Black);
     m_title.setPosition(m_windowSize.x / 2, m_windowSize.y / 4);
 }
 
 void Window::setOption() {
-    m_option.setFont(m_font);
+    if (!m_optionFont.loadFromFile("../resources/Minercraftory.ttf")) {
+        throw std::runtime_error("Loading Font Failed.");
+    }
+    m_option.setFont(m_optionFont);
     m_option.setFillColor(sf::Color::Black);
 }
 
@@ -112,7 +115,7 @@ void Window::drawOptions(const std::vector<std::string>& a_options, uint8_t a_se
         m_option.setCharacterSize(i == a_selection ? m_cubeSize.x * 1.7 : 
                                                      m_cubeSize.x * 1.2);
         centerOrigin(m_option);
-        m_option.setPosition(m_windowSize.x / 2.0f, m_windowSize.y / (1.8f - (i * 0.5)));
+        m_option.setPosition(m_windowSize.x / 2.0f, m_windowSize.y / (1.7f - (i * 0.5)));
         m_window.draw(m_option);
     }
 }

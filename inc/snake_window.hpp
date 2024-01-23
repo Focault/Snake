@@ -56,7 +56,8 @@ private:
     sf::RectangleShape m_frame;
     sf::RectangleShape m_snakeBone;
     sf::RectangleShape m_treat;
-    sf::Font m_font;
+    sf::Font m_scoreFont;
+    sf::Font m_optionFont;
     sf::Text m_scoreText;
     sf::Text m_title;
     sf::Text m_option;
