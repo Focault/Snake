@@ -43,6 +43,7 @@ void GameLogic::keyPressed(sf::Keyboard::Key a_keyPressed) {
         m_snake.changeDirection(c_right);
         break;
     case sf::Keyboard::Escape:
+        m_score.resetScore();
         m_window.close();
         break;
     default:

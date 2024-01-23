@@ -18,6 +18,7 @@ void Game::handleEvents() {
         switch (m_event.type) {
 
             case sf::Event::Closed:
+                m_score.resetScore();
                 m_window.close();
                 break;
 

@@ -2,6 +2,8 @@
 #define SNAKE_MENU_LOGIC_HPP
 
 #include <SFML/Window/Event.hpp>
+#include <vector>
+#include <string>
 
 #include "snake_logic.hpp"
 #include "snake_window.hpp"
@@ -21,9 +23,16 @@ public:
     virtual void keyPressed(sf::Keyboard::Key a_keyPressed) override;
 
 protected:
+    virtual void draw() = 0;
+    virtual void selected() = 0;
+
+protected:
     Window& m_window;
     LogicMode& m_mode;
     Score& m_score;
+    uint8_t m_selection;
+    std::vector<std::string> m_buttons;
+    bool m_changed;
 };
 
 } // snake
