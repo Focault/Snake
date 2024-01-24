@@ -38,7 +38,7 @@ vala: all
 DEPENDS= $(OBJS:%.o=%.d)
 
 clean:
-	@$(RM) $(TARGET) $(OBJS) $(DEPENDS)
+	@$(RM) $(TARGET) $(OBJS) $(DEPENDS) .gdb_history
 
 .PHONY: all check clean DEPENDS
 
